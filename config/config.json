@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "root",
-    "password": "acha123a",
-    "database": "travelSecure_development",
+    "username": "dimadimadima",
+    "password": "localpancakes",
+    "database": "face_recognitionDB",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
