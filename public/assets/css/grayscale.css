@@ -43,7 +43,11 @@ p {
   }
 }
 a {
+<<<<<<< HEAD
   color: #42DCA3;
+=======
+  color: rgb(0, 0, 0);
+>>>>>>> 1da26609d4ab7134521c852cfd687920e2f301b8
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -128,7 +132,11 @@ a:focus {
   padding: 100px 0;
   text-align: center;
   color: white;
+<<<<<<< HEAD
   background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+=======
+  background: url(../img/wires.jpg) no-repeat bottom center scroll;
+>>>>>>> 1da26609d4ab7134521c852cfd687920e2f301b8
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -226,7 +234,11 @@ a:focus {
   width: 100%;
   padding: 50px 0;
   color: white;
+<<<<<<< HEAD
   background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
+=======
+  background: url(../img/wires.jpg) no-repeat center center scroll;
+>>>>>>> 1da26609d4ab7134521c852cfd687920e2f301b8
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -299,7 +311,11 @@ body {
 }
 
 .navbar {
+<<<<<<< HEAD
   background: #03a9f4;
+=======
+  background:blueviolet;
+>>>>>>> 1da26609d4ab7134521c852cfd687920e2f301b8
 }
 
 .navbar-brand {
