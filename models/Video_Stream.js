@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function (sequelize, DataTypes) {
-  var Video_Stream = sequelize.define('Stream', {
+  var Video_Stream = sequelize.define('Video_Stream', {
     isValid: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
