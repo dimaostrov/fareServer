@@ -17,9 +17,13 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                {{#if isAuthenticated}}ww
+                
+                <li>
+                    <a class="page-scroll" href="/pricing/">Pricing</a>
+                </li>
+                {{#if isAuthenticated}}
                     <li>
-                        <a class="page-scroll" href="/trips/">My Projects</a>
+                        <a class="page-scroll" href="/trips/">My Trips</a>
                     </li>
                     <li>
                         <a href="/users/sign-out" class="page-scroll" data-toggle="modal">Logout</a>
