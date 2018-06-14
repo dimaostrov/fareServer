@@ -37,14 +37,11 @@ module.exports = function (sequelize, DataTypes) {
     models.User.hasMany(models.Screenshot, {
       onDelete: "cascade"
     });
-  };
-
-  User.associate = function (models) {
     models.User.hasMany(models.Video_Stream, {
       onDelete: "cascade"
     });
   };
-
+  
   User.Instance.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
   };

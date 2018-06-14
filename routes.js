@@ -2,12 +2,12 @@ module.exports = function(app){
 
 		var application = require('./routes/application');
 		var users = require('./routes/users');
-		var trips = require('./routes/trips');
+		var homepage = require('./routes/homepage');
 		var pricing = require('./routes/pricing');
 
 		app.use('/', application);
 		app.use('/users', users);
-		app.use('/trips', trips);
+		app.use('/homepage', homepage);
 		app.use('/pricing', pricing);
     //other routes..
 }
