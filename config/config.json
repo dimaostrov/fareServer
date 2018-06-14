@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "dimadimadima",
-    "password": "localpancakes",
+    "username": "root",
+    "password": "",
     "database": "face_recognitionDB",
     "host": "127.0.0.1",
     "dialect": "mysql"
