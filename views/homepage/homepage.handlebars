@@ -1,28 +1,29 @@
 <link rel="stylesheet" href="/assets/css/trips.css">
 {{> nav }}
 {{> login-modal }}
-{{> new-trip-modal }}
+{{> new-stream-modal }}
 <div class="all-trips-container container">
 	
 	<div class="row">
-		{{#if trip }}
-		{{#each trip}}
+		{{#if stream }}
+		{{#each stream}}
 		<div class="trip-container col-xs-12 col-sm-6 col-lg-6">
 			<div class="trip-subcontainer trip-default">
 				<h3 class="lead">
-					Trip: {{ this.dataValues.id }} Test trip name
+					Stream Name: {{ this.name }}
 				</h3>
+				<p>Stream Id: {{this.id}}</p>
 				<div class="bottom-trip-container">
 					<div class="risk-analysis-container">
 							{{!-- {{ riskAnalysis }} --}}
-						<p class="risk-analysis">
-							Some Kind of Risk Analysis
+						<p>
+							{{this.isValid}}
 						</p>
 					</div>
 					<div class="destination-container">
 							{{!-- {{ riskAnalysis }} --}}
 						<p class="destination">
-							{{ this.dataValues.destination }}
+							{{ this.url }}
 						</p>
 					</div>
 					<button type="button" class="btn btn-circle"><i class="">10</i></button>

@@ -9,31 +9,16 @@
       <!-- content goes here -->
 			<form id="streamForm">
         <div id="map-places-container">
+					<p>Enter name for stream</p>
         	<div class="form-group">
 			    	<input id="streamName" name="streamName" type="text" placeholder="Stream Name"></input>
 			    </div>
-						<input name="location_lat" type="hidden">
-						<input name="location_lng" type="hidden">
-						<input name="location_id" type="hidden">
+					<p>Enter url for stream</p>
+        	<div class="form-group">
+			    	<input id="streamUrl" name="streamUrl" type="text" placeholder="www..."></input>
+			    </div>
 				</div>
-				<div class="form-group">
-				  <label for="methodOfTransport">Choose Mode of Transportation:</label>
-				  <select class="form-control" id="methodOfTransport">
-				    <option id="flight" name="flight" value="flight">Flight</option>
-				    <option id="car" name="car" value="car">Car</option>
-				    <option id="bus" name="bus" value="bus">Bus</option>
-				    <option id="train" name="train" value="train">
-				    Train</option>
-				    <option id="bicycle" name="bicycle" value="bicycle">Bicycle</option>
-				    <option id="walking" name="walking" value="walking">Walking</option>
-				    <option id="other" name="other" value="other">Other</option>
-				    <option id="multiple" name="multiple" value="multiple">Multiple Transports</option>
-				  </select>
-				</div>
-				<div class="form-group"> <!-- Date input -->
-	        <p>Date of Arrival at Destination: <input type="text" id="datepicker"></p>
-      	</div>
-        <button type="submit" class="btn btn-default">Submit</button>
+				<button id="streamSubmit">Submit Stream</button>
       </form>
 		</div>
 	</div>
