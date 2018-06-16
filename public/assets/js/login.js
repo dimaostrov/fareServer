@@ -37,7 +37,7 @@ $(document).ready(function() {
       username: username,
       password: password
     }).then(function(data) {
-      window.location.replace(data);
+      window.location.href = 'homepage/homepage';
       // If there's an error, log the error
     }).catch(function(err) {
       $("#password-feedback").text("Incorrect Username or Password");

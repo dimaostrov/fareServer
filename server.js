@@ -1,3 +1,4 @@
+require('dotenv').config();
 // Dependencies
 // ============
 const express        = require('express');
@@ -9,6 +10,7 @@ const session        = require('express-session');
 const methodOverride = require('method-override'); // for deletes in express
 const passport 			 = require("./config/passport");
 const config				 = require("./config/extra-config");
+
 // Express settings
 // ================
 

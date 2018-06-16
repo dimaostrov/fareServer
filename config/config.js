@@ -1,7 +1,7 @@
-{
+module.exports = {
   "development": {
-    "username": "root",
-    "password": "piis3.1415926",
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
     "database": "face_recognitionDB",
     "host": "127.0.0.1",
     "dialect": "mysql"
