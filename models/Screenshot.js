@@ -13,12 +13,29 @@ module.exports = function (sequelize, DataTypes) {
         len: [1]
       }
     }
+  },
+  {
+    // Hooks are automatic methods that run during various phases of the User Model lifecycle
+    // In this case, before a User is created, we will automatically hash their password
+    hooks: {
+    /*  beforeCreate: function (user, options, cb) {
+        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+        cb(null, options);
+      }*/
+    }
   });
 
   Screenshot.associate = function (models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    
+    models.Screenshot.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    models.Screenshot.belongsTo(models.Video_Stream, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
   return Screenshot;
 };
