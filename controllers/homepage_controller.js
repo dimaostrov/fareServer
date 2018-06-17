@@ -2,7 +2,6 @@ var db  = require('../models');
 
 exports.index = function(req, res) {
   db.Video_Stream.findAll({
-    include: [db.Screenshot],
     where: {
       UserId: req.user.id
     }
