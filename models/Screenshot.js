@@ -26,11 +26,6 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Screenshot.associate = function (models) {
-    models.Screenshot.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
     models.Screenshot.belongsTo(models.Video_Stream, {
       foreignKey: {
         allowNull: false
