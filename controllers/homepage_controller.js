@@ -2,6 +2,7 @@ var db = require('../models');
 
 exports.index = function (req, res) {
   db.Video_Stream.findAll({
+    include: [db.Screenshot],
     where: {
       UserId: req.user.id
     }
@@ -14,7 +15,7 @@ exports.index = function (req, res) {
         foo: function () { return 'foo.'; }
       }
     });
-  });
+  }); 
 };
 
 exports.createStream = function (req, res) {

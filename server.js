@@ -10,6 +10,7 @@ const session        = require('express-session');
 const methodOverride = require('method-override'); // for deletes in express
 const passport 			 = require("./config/passport");
 const config				 = require("./config/extra-config");
+const flash          = require('connect-flash');
 
 // Express settings
 // ================
@@ -46,6 +47,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(authCheck);
