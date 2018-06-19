@@ -8,7 +8,7 @@ body {
   color: rgba(0, 0, 0, 0.63);
 }
 
-.trip-subcontainer{
+.stream-subcontainer{
   background: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -20,22 +20,22 @@ body {
   overflow: scroll;
 }
 
-.trip-radius{
+.stream-radius{
 	border-radius:7px;
 }
 
-.trip-danger {	border-color: #d9534f; }
+.stream-danger {	border-color: #d9534f; }
 
-.trip-success {	border-color: #5cb85c; }
+.stream-success {	border-color: #5cb85c; }
 
-.trip-warning {	border-color: #f0ad4e; }
+.stream-warning {	border-color: #f0ad4e; }
 
 
 .risk-analysis-container {
 	display: inline-block;
 }
 
-.bottom-trip-container {
+.bottom-stream-container {
 	
 }
 
@@ -127,12 +127,12 @@ form, #map-places-container {
 	color: white;
 }
 
-.all-trips-container {
+.all-streams-container {
 	margin-top: 20%;
 }
 
 @media (min-width: 768px) {
-  .all-trips-container {
+  .all-streams-container {
     margin-top: 10%;
   }
 }

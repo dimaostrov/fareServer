@@ -1,11 +1,10 @@
 var express = require('express');
 var router  = express.Router();
 
-var trips_controller = require('../controllers/screenshots_controller');
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+var screenshots_controller = require('../controllers/screenshots_controller');
 
-router.get('/', isAuthenticated, trips_controller.index);
+//router.get('/', screenshots_controller.index);
 
-router.post('/new', isAuthenticated, trips_controller.createTrip);
+router.post('/new', screenshots_controller.createScreenshot);
 
 module.exports = router;
