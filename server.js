@@ -46,7 +46,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
+app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true, maxAge: 60 * 60 }));
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
