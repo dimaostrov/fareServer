@@ -1,17 +1,8 @@
 <link rel="stylesheet" href="/assets/css/stream.css"> {{> nav }} {{> login-modal }} {{> new-stream-modal }}
 <div class="all-streams-container container">
-	<div id="container">
-		<video id="inputVideo" width="400" height="300" preload="auto" autoplay>
-			<source src="/assets/img/testvideo.mov" type="video/ogg" />
-		</video>
-		<canvas id="overlay" width="400" height="300"></canvas>
-	</div>
-	<br/>
-	<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
-	<div id="text">
-	</div>
-	<div id="nogum" class="nogum">
-	</div>
+	<video id="inputVideo" width="400" height="300" autoplay>
+		<source src="/assets/img/video3.mp4" type="video/ogg" />
+	</video>
 </div>
 <div class="row">
 	{{#if stream }} {{#each stream}}
@@ -34,25 +25,10 @@
 						{{ this.url }}
 					</p>
 				</div>
-<<<<<<< HEAD
-=======
-				<h3>Screenshots:</h3>
-				<li>
-					{{#each this.Screenshots}}
-					<img src={{this.descriptions}}/>
-					<p>{{this.url}}</p>
-					{{/each}}
-				</li>
-				<form class="add-screenshot">
-					<input placeholder="Enter screenshot url" id="screenshotUrl{{this.id}}" type="text">
-					<input placeholder="Enter descriptions" id="descriptions{{this.id}}" type="text">
-					<button class="submit-screenshot" data-id={{this.id}}>Submit</button>
-				</form>
->>>>>>> origin
 			</div>
 			<h3>Screenshots:</h3>
 			<li>
-				{{#each stream.Screenshots}}
+				{{#each this.Screenshots}}
 				<p>{{this.descriptions}}</p>
 				<p>{{this.url}}</p>
 				{{/each}}
@@ -64,13 +40,9 @@
 			</form>
 		</div>
 	</div>
-<<<<<<< HEAD
 	{{/each}} {{/if}}
 	<button id="add-stream-button" data-toggle="modal" data-target="#squarespaceModal" type="button" class="btn btn-circle">
 		<i class="glyphicon glyphicon-plus"></i>
 	</button>
 </div>
 </div>
-=======
-</div>
->>>>>>> origin
