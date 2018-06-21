@@ -25,6 +25,21 @@
 						{{ this.url }}
 					</p>
 				</div>
+<<<<<<< HEAD
+=======
+				<h3>Screenshots:</h3>
+				<li>
+					{{#each this.Screenshots}}
+					<img src="{{this.descriptions}}"/>
+					<p>{{this.url}}</p>
+					{{/each}}
+				</li>
+				<form class="add-screenshot">
+					<input placeholder="Enter screenshot url" id="screenshotUrl{{this.id}}" type="text">
+					<input placeholder="Enter descriptions" id="descriptions{{this.id}}" type="text">
+					<button class="submit-screenshot" data-id={{this.id}}>Submit</button>
+				</form>
+>>>>>>> origin
 			</div>
 			<h3>Screenshots:</h3>
 			<li>
