@@ -36,7 +36,7 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     data: {
-      type: DataTypes.STRING(10000),
+      type: DataTypes.TEXT,
       allowNull: false,
       validate: {
         len: [1]
