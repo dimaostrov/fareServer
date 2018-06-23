@@ -1,0 +1,48 @@
+{{!-- . --}}
+<link rel="stylesheet" href="/assets/css/stream.css"> {{> nav }} {{> login-modal }} {{> new-stream-modal }}
+<div class="all-streams-container container">
+	<video id="inputVideo" width="400" height="300" autoplay>
+		<source src="/assets/img/testvideo.mov" type="video/ogg" />
+	</video>
+	<div class="row">
+		{{#if stream }} {{#each stream}}
+		<div class="stream-container col-xs-12 col-sm-6 col-lg-6">
+			<div class="stream-subcontainer stream-default">
+				<h3 class="lead">
+					Stream Name: {{ this.name }}
+				</h3>
+				<p>Stream Id: {{this.id}}</p>
+				<div class="bottom-stream-container">
+					<div class="risk-analysis-container">
+						{{!-- {{ riskAnalysis }} --}}
+						<p>
+							{{this.isValid}}
+						</p>h
+					</div>
+					<div class="destination-container">
+						{{!-- {{ riskAnalysis }} --}}
+						<p class="destination">
+							{{ this.url }}
+						</p>
+					</div>
+				</div>
+				<h3>Screenshots:</h3>
+				<li>
+					{{#each this.Screenshots}}
+					<img src="{{this.descriptions}}"/>
+					<p>{{this.url}}</p>
+					{{/each}}
+				</li>
+				<form class="add-screenshot">
+					<input placeholder="Enter screenshot url" id="screenshotUrl{{this.id}}" type="text">
+					<input placeholder="Enter descriptions" id="descriptions{{this.id}}" type="text">
+					<button class="submit-screenshot" data-id={{this.id}}>Submit</button>
+				</form>
+			</div>
+		</div>
+		{{/each}} {{/if}}
+		<button id="add-stream-button" data-toggle="modal" data-target="#squarespaceModal" type="button" class="btn btn-circle">
+			<i class="glyphicon glyphicon-plus"></i>
+		</button>
+	</div>
+</div>

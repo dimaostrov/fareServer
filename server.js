@@ -18,6 +18,9 @@ const flash          = require('connect-flash');
 // instantiate our app
 const app            = express();
 
+app.use(express.static(path.join(__dirname, './dist')));
+app.use(express.static(path.join(__dirname, './node_modules/axios/dist')))
+
 // override POST to have DELETE and PUT
 app.use(methodOverride('_method'));
 

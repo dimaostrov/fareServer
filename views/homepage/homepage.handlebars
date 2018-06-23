@@ -1,8 +1,103 @@
+{{!-- . --}}
+<script src="/facedect/face-api.js"></script>
+<script src="/facedect/axios.min.js"></script>
+<script src="/facedect/commons.js"></script>
+<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script> -->
+<script type="text/javascript" src="/facedect/html2canvas.js"></script>
 <link rel="stylesheet" href="/assets/css/stream.css"> {{> nav }} {{> login-modal }} {{> new-stream-modal }}
-<div class="all-streams-container container">
-	<video id="inputVideo" width="400" height="300" autoplay>
-		<source src="/assets/img/testvideo.mov" type="video/ogg" />
-	</video>
+
+
+
+<br><br><br>
+<body>
+  <center>
+      <div id="header" style="height:30px;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 7em;width: 100%;top: 30em;background-color:white">
+        <div id='youtube_thumb'><h6>Loading...</h6></div>
+        <button class="waves-effect waves-light btn-small" id="proceed_button" style="position: center;right: 0;left: 0;margin-right: auto;margin-left: auto" onclick="loadScript('/facedect/facedetection_js.js');" value="Proceed" disabled='disabled'><h6>START!</h6></button>
+        <br>
+        <div id="video_div"></div>
+        <canvas id="overlay" />
+      </div>
+      <div id="spaces">
+        <br>
+      </div>
+      <div id="loading_div"></div>
+      <div id="spaces2"><br><br></div>
+      <div style="height:120px;overflow-y:scroll;overflow-x:hidden;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 20em;width: 90%;text-align: left;background-color:#eee" id="results-view"></div>
+      <br><br>
+      <div id="all">
+      <div id="faces_view"></div>
+    </div>
+  </center>
+  <script>
+  //var default_youtube_link = "https://www.youtube.com/watch?v=8HlqSrCazqo"
+  //var default_youtube_link = "https://www.youtube.com/watch?v=U1it45QagN8"
+  var default_youtube_link = "https://www.youtube.com/watch?v=lx4tmcTSmNk"
+  var apiKey = "AIzaSyCuYYszyFQE2cnSB8jQfDnYUhMAcH5LQyg"
+  var user_input_link = prompt("Please insert a YouTube link", default_youtube_link)
+  if (user_input_link === null) {
+    user_input_link = default_youtube_link
+  }
+  var youtube_id = String(user_input_link).split("=")[1]
+  var youtube_thumbnail = "https://i1.ytimg.com/vi/" + youtube_id + "/default.jpg"
+  document.getElementById("results-view").style.display = "none"
+  var video_link
+  var Youtube = {}
+  var d = new Date();
+  var n_number = d.getTime()
+
+  var promise = $.ajax({
+    url: 'https://you-link.herokuapp.com/?url=' + user_input_link,
+    method: "GET"
+  }).then(function(response) {
+    for(var i in response){
+      if(String(response[i].type).split(";")[0] == "video\/mp4"){
+        if(String(response[i].quality).split(";")[0] == "medium"){
+          return response[i].url
+        }
+      }
+    }
+  })
+  
+  $(function() {
+      promise.done(function(myUrl) {
+        Youtube.url = myUrl
+        $.ajax({
+              url: "https://www.googleapis.com/youtube/v3/videos?id=" + youtube_id + "&key="+ apiKey + "&fields=items(snippet(title))&part=snippet", 
+              dataType: "jsonp",
+              success: function(data){
+                Youtube.title = data.items[0].snippet.title
+                document.getElementById("proceed_button").disabled = false
+                $('#youtube_thumb').html("<br><h5>" + Youtube.title + "</h5><br><img src='" + youtube_thumbnail + "'><br><br><br><h6>Please insert a confidence level in the field below, it must be a number <br> between 0.1 and 0.9 (from lower to higher). Then press 'Start' to begin!<br><br><input class='validate' style='width:2em;top:0;bottom:0;right:0;left:0;margin-right:auto;margin-left:auto' id='confidence' value='0.6'></h6>")
+              }});
+    })
+  }) 
+
+  function loadScript(script_url){
+      Youtube.confidence = $('#confidence').val()
+      $('#youtube_thumb').remove()
+      $('#proceed_button').remove()
+      $('#loading_div').html("<input style='position: fixed;right: 0;left: 0;margin-right: auto;margin-left: auto;height:100%;width:100%;top:0;bottom:0;background-color:gray;text-align: center' value='PLEASE WAIT - LOADING VIDEO' disabled='disabled' id='startbutton'></input>")
+      document.getElementById("results-view").style.display = "block"
+      var proxy = 'https://cors-anywhere.herokuapp.com/'
+      this.video_link = proxy + Youtube.url
+      $('#start_button').empty()
+      var head = document.getElementsByTagName('head')[0]
+      var script = document.createElement('script')
+      script.type = 'text/javascript'
+      script.src = script_url
+      head.appendChild(script)}
+  </script>
+</body>
+
+<br><br><br>
+<div class="all-streams-container container"></div>
+
 	<div class="row">
 		{{#if stream }} {{#each stream}}
 		<div class="stream-container col-xs-12 col-sm-6 col-lg-6">
