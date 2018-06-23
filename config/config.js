@@ -5,7 +5,7 @@ module.exports = {
      "database": "face_recognitionDB",
      "host": "127.0.0.1",
      "dialect": "mysql"
-  },
+   },
   "test": {
     "username": "root",
     "password": "rafa",
@@ -14,7 +14,7 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
+    "use_env_variable": process.env.JAWSDB_URL,
     "dialect": "mysql"
   }
 }
