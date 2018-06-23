@@ -14,7 +14,10 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": 'mysql://toj1ammqdwc2hcm1:s3zrzd30wq7e5upf@g3v9lgqa8h5nq05o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/v4kmzvc0u5khw6r3',
+    "username": process.env.JAWS_USER,
+    "password": process.env.JAWS_PASSWORD,
+    "database": process.env.JAWS_DB,
+    "host": process.env.JAWS_HOST,
     "dialect": "mysql"
   }
 }
