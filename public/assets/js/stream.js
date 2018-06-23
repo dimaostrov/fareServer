@@ -9,7 +9,7 @@ var url = window.location.search;
 //var updating = false;
 //var default_youtube_link = "https://www.youtube.com/watch?v=8HlqSrCazqo"
 //var default_youtube_link = "https://www.youtube.com/watch?v=U1it45QagN8"
-var default_youtube_link = "https://www.youtube.com/watch?v=lx4tmcTSmNk"
+var default_youtube_link = "https://www.youtube.com/watch?v=Y7DlpSTSYzY&t=2s"
 var apiKey = "AIzaSyCuYYszyFQE2cnSB8jQfDnYUhMAcH5LQyg"
 var user_input_link = prompt("Please insert a YouTube link", default_youtube_link)
 if (user_input_link === null) {
