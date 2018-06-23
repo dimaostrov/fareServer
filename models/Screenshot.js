@@ -2,17 +2,31 @@
 
 module.exports = function (sequelize, DataTypes) {
   var Screenshot = sequelize.define('Screenshot', {
-    descriptions: {
-      type: DataTypes.STRING,
+    info: {
+      type: DataTypes.STRING(1000),
       allowNull: false,
     },
-    url: {
+    streamTitle: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
-    }
+    },
+    faceCount: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    videoTime: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
   },
   {
     // Hooks are automatic methods that run during various phases of the User Model lifecycle
@@ -28,7 +42,7 @@ module.exports = function (sequelize, DataTypes) {
   Screenshot.associate = function (models) {
     models.Screenshot.belongsTo(models.Video_Stream, {
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
   };

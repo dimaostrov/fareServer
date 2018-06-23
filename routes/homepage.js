@@ -8,4 +8,6 @@ router.get('/', isAuthenticated, homepage_controller.index);
 
 router.post('/new', isAuthenticated, homepage_controller.createStream);
 
+router.delete('/:id', isAuthenticated,homepage_controller.deleteStream);
+
 module.exports = router;
