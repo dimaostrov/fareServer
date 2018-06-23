@@ -20,6 +20,27 @@ module.exports = function (sequelize, DataTypes) {
       validate: {
         len: [1]
       }
+    },
+    duration: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    faces: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    data: {
+      type: DataTypes.STRING(10000),
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     }
   });
 

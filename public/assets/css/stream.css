@@ -38,7 +38,9 @@ body {
 .bottom-stream-container {
 	
 }
-
+#streamData{
+  font-size: 10px;
+}
 /* Map CSS */
 
 form, #map-places-container {
