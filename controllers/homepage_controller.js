@@ -2,7 +2,10 @@ var db = require('../models');
 
 exports.index = function (req, res) {
   db.Video_Stream.findAll({
-    include: [db.Screenshot]
+    include: [db.Screenshot],
+    where: {
+      UserId: req.user.id
+    }
   }).then(function (dbStream) {
     console.log(dbStream);
     res.render('homepage/homepage', {
