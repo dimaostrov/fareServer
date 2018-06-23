@@ -136,15 +136,16 @@ async function onPlay(videoEl) {
 
 
 
-    $('#download_txt_button').click(function () {
+    /*$('.download_txt_button').on('click',function () {
       var element = document.createElement('a');
-      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(results_data));
+      var local_data=$(`.hidden-data-div #${$(this).attr('id')}`).val().trim()
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(local_data)));
       element.setAttribute('download', "face-squared_" + n_number + ".txt");
       element.style.display = 'none';
       document.body.appendChild(element);
       element.click();
       document.body.removeChild(element);
-    })
+    })*/
 
     return results_data
   };

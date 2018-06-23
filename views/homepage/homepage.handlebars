@@ -62,6 +62,8 @@
       <p>Stream Length: {{this.duration}}</p>
       <p>Total Faces Detected: {{this.faces}}</p>
       <p>URL: {{ this.url }}</p>
+      <div class="hidden-data-div"><p id="data-{{this.id}}">{{this.data}}</p></div>
+      <button class="btn btn-danger download_txt_button" id={{this.id}}>Download Data</button>
       <button class="btn btn-danger delete-stream" id={{this.id}}>Delete</button>
     </div>
   </div>
