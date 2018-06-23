@@ -42,7 +42,9 @@ body {
   font-size: 10px;
 }
 /* Map CSS */
-
+.hidden-data-div{
+  display: none;
+}
 form, #map-places-container {
   height: 100%;
   margin: 0;

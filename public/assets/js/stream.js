@@ -146,3 +146,17 @@ $(".delete-stream").on("click",function(){
 			window.location.href = "/homepage";
 		});
 });
+
+$('body').on('click','.download_txt_button',function () {
+	var element = document.createElement('a');
+	var local_data_location='.hidden-data-div #data-'+$(this).attr('id');
+	console.log(local_data_location);
+	var local_data=$(local_data_location).text();
+	console.log(local_data);
+	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(local_data));
+	element.setAttribute('download', "face-squared_" + n_number + ".txt");
+	element.style.display = 'none';
+	document.body.appendChild(element);
+	element.click();
+	document.body.removeChild(element);
+});
