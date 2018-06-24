@@ -106,7 +106,7 @@ async function onPlay(videoEl) {
 
       new Promise(function (fulfill, reject) {
         document.getElementById("results-view").style.display = "none"
-        $("#faces_view").attr("style", "height:600px;width:100%;background-color:white;overflow-y:scroll;overflow-x:hidden;right: 0;left: 0;margin-right: auto;margin-left: auto;text-align: center")
+        $("#faces_view").attr("style", "height:400px;width:100%;background-color:white;overflow-y:scroll;overflow-x:hidden;right: 0;left: 0;margin-right: auto;margin-left: auto;text-align: center")
         $("#faces_view").html(faces)
         fulfill(result);
       }).then(function (result) {
