@@ -15,7 +15,7 @@ var user_input_link = prompt("Please insert a YouTube link", default_youtube_lin
 if (user_input_link === null) {
 	user_input_link = default_youtube_link
 }
-var youtube_id = String(user_input_link).split("=")[1]
+var youtube_id = String(user_input_link).replace("&","=").split("=")[1]
 var youtube_thumbnail = "https://i1.ytimg.com/vi/" + youtube_id + "/default.jpg"
 document.getElementById("results-view").style.display = "none"
 var video_link
