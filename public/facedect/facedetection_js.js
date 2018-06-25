@@ -136,8 +136,6 @@ async function onPlay(videoEl) {
 
     })
 
-
-
     /*$('.download_txt_button').on('click',function () {
       var element = document.createElement('a');
       var local_data=$(`.hidden-data-div #${$(this).attr('id')}`).val().trim()
