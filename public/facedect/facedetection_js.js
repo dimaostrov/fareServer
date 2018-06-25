@@ -97,11 +97,12 @@ async function onPlay(videoEl) {
     $('#spaces').html("")
     end_time = current_time_sec
     $('#header').html("<center><h5>Results</h5><h6>" + count_faces + " total faces found in video segment (from " + start_time + " to " + end_time + " seconds).<br>Total images processed:" + total_frames_processed + "</h6><button class='btn' id='add-stream-button' data-toggle='modal' data-target='#squarespaceModal' type='button' style='position: center;right: 0;left: 0;margin-right: auto;margin-left: auto' value='Save Stream'><h6>Save Stream</h6></button>&nbsp;&nbsp;<button class='btn' id='download_image_button' style='position: center;right: 0;left: 0;margin-right: auto;margin-left: auto' value='Download Faces'><h6>Download Faces</h6></button></center>")
+    $('#header').attr("style", "height:20px;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 7em;width: 100%;top: 30em;background-color:white")
     console.log(results_data) // results that will go to the database
     console.log("total_faces_in_video: " + count_faces) // results that will go to the database
     $('#spaces').html("<br>")
     $('#spaces2').html("<br><br><br>")
-    $("#results-view").attr("style", "height:30px;width:700px;background-color:#eee;overflow-y:scroll;overflow-x:hidden;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 25em;width: 90%;text-align: left")
+    $("#results-view").attr("style", "height:25px;width:700px;background-color:#eee;overflow-y:scroll;overflow-x:hidden;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 25em;width: 90%;text-align: left")
 
     $('#download_image_button').click(function () {
 
