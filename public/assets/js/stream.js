@@ -57,7 +57,7 @@ function loadScript(script_url) {
 	$('#youtube_thumb').remove()
 	$('#proceed_button').remove()
 	$('#loading_div').html("<input style='position: fixed;right: 0;left: 0;margin-right: auto;margin-left: auto;height:100%;width:100%;top:0;bottom:0;background-color:gray;text-align: center' value='PLEASE WAIT - LOADING VIDEO' disabled='disabled' id='startbutton'></input>")
-	$('#results-view').attr("style","<div style='height:120px;overflow-y:scroll;overflow-x:hidden;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 20em;width: 90%;text-align: left;background-color:#eee' id='results-view'></div>")
+	$('#results-view').attr("style","height:120px;overflow-y:scroll;overflow-x:hidden;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 20em;width: 90%;text-align: left;background-color:#eee")
 	document.getElementById("results-view").style.display = "block"
 	var proxy = 'https://cors-anywhere.herokuapp.com/'
 	this.video_link = proxy + Youtube.url
