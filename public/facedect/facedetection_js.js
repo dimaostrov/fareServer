@@ -92,6 +92,7 @@ async function onPlay(videoEl) {
   vid.onplaying = function () {
     vid.pause()
     vid.remove()
+    $('body').attr("style","overflow: auto")
     $('#results-view').scrollTop($('#results-view')[0].scrollHeight)
     $('#spaces').html("")
     end_time = current_time_sec
