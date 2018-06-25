@@ -1,4 +1,4 @@
-$('#video_div').html("<video id='videoel' crossorigin='anonymous' src='" + video_link + "' +  oncanplay='enablestart()' preload='auto' loop playsinline autoplay muted width='230'></video>")
+$('#video_div').html("<video id='videoel' crossorigin='anonymous' src='" + video_link + "' +  oncanplay='enablestart()' preload='auto' loop playsinline autoplay muted width='200'></video>")
 var total_frames_processed = 0
 var init_var = 0.0
 var minConfidence = parseFloat(Youtube.confidence)
