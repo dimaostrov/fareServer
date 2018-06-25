@@ -16,35 +16,44 @@
 <br>
 <br>
 <br>
-<center>
-  <div id="header" style="height:30px;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 7em;width: 100%;top: 30em;background-color:white">
-    <div id='youtube_thumb'>
-      <h6>Loading...</h6>
+
+<div class="row">
+  <div class="stream-container col-xs-12 col-sm-6 col-lg-6">
+    <div class="stream-subcontainer stream-default">
+     
+    <center>
+      <div id="header" style="height:30px;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 7em;width: 100%;top: 30em;background-color:white">
+        <div id='youtube_thumb'>
+          <h6>Loading...</h6>
+        </div>
+        <button class="waves-effect waves-light btn-small" id="proceed_button" style="position: center;right: 0;left: 0;margin-right: auto;margin-left: auto"
+          onclick="loadScript('/facedect/facedetection_js.js');" value="Proceed" disabled='disabled'>
+          <h6>START!</h6>
+        </button>
+        <br>
+        <div id="video_div"></div>
+        <canvas id="overlay" />
+      </div>
+      <div id="spaces">
+        <br>
+      </div>
+      <div id="loading_div"></div>
+      <div id="spaces2">
+        <br>
+        <br>
+      </div>
+      <div style="height:120px;overflow-y:hidden;overflow-x:hidden;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 20em;width: 90%;text-align: left;background-color:white"
+        id="results-view"></div>
+      <br>
+      <br>
+      <div id="all">
+        <div id="faces_view"></div>
+      </div>
+    </center>
+     
     </div>
-    <button class="waves-effect waves-light btn-small" id="proceed_button" style="position: center;right: 0;left: 0;margin-right: auto;margin-left: auto"
-      onclick="loadScript('/facedect/facedetection_js.js');" value="Proceed" disabled='disabled'>
-      <h6>START!</h6>
-    </button>
-    <br>
-    <div id="video_div"></div>
-    <canvas id="overlay" />
   </div>
-  <div id="spaces">
-    <br>
-  </div>
-  <div id="loading_div"></div>
-  <div id="spaces2">
-    <br>
-    <br>
-  </div>
-  <div style="height:120px;overflow-y:hidden;overflow-x:hidden;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 20em;width: 90%;text-align: left;background-color:white"
-    id="results-view"></div>
-  <br>
-  <br>
-  <div id="all">
-    <div id="faces_view"></div>
-  </div>
-</center>
+</div>
 
 <br>
 <br>
