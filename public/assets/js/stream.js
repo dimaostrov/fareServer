@@ -1,8 +1,3 @@
-window.alert = function(title, message){
-    var myElementToShow = document.getElementById("someElementId");
-    myElementToShow.innerHTML = "THIS IS A BETA VERSION!" + "</br>" + "We are currently in a temporary test server that often goes down. If the loading takes too long, please check if <a href='https://cors-anywhere.herokuapp.com'>cors-anywhere</a> servers are working in your browser. We apologize for any inconvenience." 
-}
-
 var nameInput = $("#streamName"),
 	urlInput = $("#streamUrl"),
 	screenshots = {};
