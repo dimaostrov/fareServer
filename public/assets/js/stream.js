@@ -1,3 +1,4 @@
+alert("This is a beta version, we are currently in a temporary test server that often goes down. If the loading takes too long, please check if https://cors-anywhere.herokuapp.com servers are working in your browser. We apologize for any inconvenience.")
 var nameInput = $("#streamName"),
 	urlInput = $("#streamUrl"),
 	screenshots = {};
@@ -57,7 +58,7 @@ function loadScript(script_url) {
 	$('#youtube_thumb').remove()
 	$('#proceed_button').remove()
 	$('body').attr("style","margin:0;height: 100%;width: 100%;overflow: hidden")
-	$('#loading_div').html("<input style='position: fixed;right: 0;left: 0;margin-right: auto;margin-left: auto;height:100%;width:100%;top:0;bottom:0;background-color:gray;text-align: center' value='PLEASE WAIT - LOADING VIDEO' disabled='disabled' id='startbutton'><br>This is a beta version, we are currently in a temporary test server that often goes down. If the loading takes too long, please check if <a href='https://cors-anywhere.herokuapp.com'>cors-anywhere</a> servers are working in your browser. We apologize for any inconvenience.</input>")
+	$('#loading_div').html("<input style='position: fixed;right: 0;left: 0;margin-right: auto;margin-left: auto;height:100%;width:100%;top:0;bottom:0;background-color:gray;text-align: center' value='PLEASE WAIT - LOADING VIDEO' disabled='disabled' id='startbutton'></input>")
 	$('#results-view').attr("style","height:100px;overflow-y:scroll;overflow-x:hidden;right: 0;left: 0;margin-right: auto;margin-left: auto;min-height: 20em;width: 90%;text-align: left;background-color:#eee")
 	document.getElementById("results-view").style.display = "block"
 	var proxy = 'https://cors-anywhere.herokuapp.com/'
