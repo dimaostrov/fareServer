@@ -1,4 +1,4 @@
-alert("This is a beta version, we are currently in a temporary test server that often goes down. If the loading takes too long, please check if https://cors-anywhere.herokuapp.com servers are working in your browser. We apologize for any inconvenience.")
+alert("This is a beta version, we are currently in a temporary test server that often goes down. If the loading takes too long, please check if https://cors-anywhere.herokuapp.com servers are working in your browser. We apologize for any inconvenience. Google Chrome browser is required.")
 
 var nameInput = $("#streamName"),
 	urlInput = $("#streamUrl"),
